@@ -8,3 +8,5 @@ if [ -r ~/.bashrc ]; then
 fi
 
 export XDG_CONFIG_HOME="$HOME"/.config
+
+[[ -r "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ]] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
