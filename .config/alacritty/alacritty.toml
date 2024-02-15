@@ -8,4 +8,7 @@ family = "UbuntuMono Nerd Font"
 
 [window]
 decorations = "none"
-startup_mode = "maximized"
+
+[window.padding]
+x = 7
+y = 0
