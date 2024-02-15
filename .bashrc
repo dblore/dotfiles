@@ -27,7 +27,7 @@ PROMPT_COMMAND='__git_ps1 "\[\e[33m\]\u\[\e[0m\]@\[\e[34m\]\h\[\e[0m\]:\[\e[35m\
 PATH="${PATH:+${PATH}:}"
 
 # cd
-alias ..="cd .."
+alias ..='cd ..'
 
 # ls
 alias ls='ls --color=auto'
@@ -38,3 +38,9 @@ alias t='tmux'
 # ricing
 alias sbr='source ~/.bashrc'
 
+# kubectl
+alias k='kubectl'
+complete -o default -F __start_kubectl k
+alias kgp='kubectl get pods'
+alias kc='kubectx'
+alias kc='kubectx'
