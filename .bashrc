@@ -13,6 +13,7 @@ export HISTCONTROL=ignorespace
 
 # aliases
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias v='nvim'
 
 # prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
