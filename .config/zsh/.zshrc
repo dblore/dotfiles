@@ -24,6 +24,8 @@ setopt HIST_VERIFY               # Do not execute immediately upon history expan
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree ~' # https://www.zsh.org/mla/workers/2023/msg00282.html
 alias v='nvim'
 alias vim='v'
+alias zshc='v $ZDOTDIR/.zshrc'
+alias zshr='source $ZDOTDIR/.zshrc'
 
 # pyenv
 eval "$(pyenv init -)"
@@ -59,6 +61,16 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
 # prompt
 eval "$(starship init zsh)"
+
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
+# change cursor mode
+source $ZDOTDIR/plugins/cursor_mode
 
 # syntax highlighting
 source "$ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
