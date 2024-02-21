@@ -6,8 +6,10 @@ path+=("$PYENV_ROOT/bin")
 export HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 export HISTSIZE=25000
 export SAVEHIST=25000
-export HISTCONTROL=ignorespace
-setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt EXTENDED_HISTORY
 
 # aliases
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
