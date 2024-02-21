@@ -41,3 +41,5 @@ alias kgp='kubectl get pods'
 alias kc='kubectx'
 alias kc='kubectx'
 
+# prompt
+eval "$(starship init zsh)"
