@@ -15,9 +15,8 @@ complete -C '/usr/local/bin/aws_completer' aws
 # Change AWS Profile
 awscp() {
 	PROFILES=($(aws configure list-profiles))
-	
-	if [[ $# -eq 0 ]]
-	then
+
+	if [[ $# -eq 0 ]]; then
 		SELECTED_PROFILE=$(printf '%s\n' "${PROFILES[@]}" | fzf --prompt="Select AWS profile: ")
 		export AWS_PROFILE=$SELECTED_PROFILE
 		export AWS_DEFAULT_PROFILE=$SELECTED_PROFILE
@@ -28,3 +27,7 @@ awscp() {
 		printf "\nAWS Profile changed to %s \n\n" $1
 	fi
 }
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+eval "$(pyenv init -)"

@@ -14,6 +14,11 @@ export HISTCONTROL=ignorespace
 # aliases
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias v='nvim'
+alias vim='v'
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+eval "$(pyenv init -)"
 
 # prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
@@ -25,7 +30,7 @@ export GIT_PS1_DESCRIBE_STYLE="branch"
 PROMPT_COMMAND='__git_ps1 "\[\e[33m\]\u\[\e[0m\]@\[\e[34m\]\h\[\e[0m\]:\[\e[35m\]\W\[\e[0m\]" " \n$ "'
 
 # path
-PATH="${PATH:+${PATH}:}"
+PATH="${PATH:+${PATH}:}${PYENV_ROOT}/bin"
 
 # cd
 alias ..='cd ..'
