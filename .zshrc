@@ -1,7 +1,3 @@
-# path
-path+=('/opt/homebrew/bin')
-path+=("$PYENV_ROOT/bin")
-
 # history
 export HISTFILE=~/.histfile
 export HISTSIZE=25000
@@ -35,3 +31,7 @@ alias k='kubectl'
 alias kgp='kubectl get pods'
 alias kc='kubectx'
 alias kc='kubectx'
+
+# path
+path+=('/opt/homebrew/bin')
+path+=("$PYENV_ROOT/bin")
