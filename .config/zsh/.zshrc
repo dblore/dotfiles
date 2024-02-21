@@ -37,9 +37,6 @@ alias ll='ls -la'
 
 alias t='tmux'
 
-# ricing
-alias sbr='source ~/.bashrc'
-
 # kubectl
 alias k='kubectl'
 alias kgp='kubectl get pods'
