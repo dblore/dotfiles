@@ -51,3 +51,5 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index
 # prompt
 eval "$(starship init zsh)"
 
+# syntax highlighting
+source "$ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
