@@ -2,6 +2,10 @@
 path+=('/opt/homebrew/bin')
 path+=("$PYENV_ROOT/bin")
 
+# auto complete
+_comp_options+=(globdots) # With hidden files
+source $ZDOTDIR/config/completion.zsh
+
 # history
 export HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 export HISTSIZE=25000
@@ -12,7 +16,7 @@ setopt HIST_REDUCE_BLANKS
 setopt EXTENDED_HISTORY
 
 # aliases
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree ~' # https://www.zsh.org/mla/workers/2023/msg00282.html
 alias v='nvim'
 alias vim='v'
 
