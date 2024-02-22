@@ -9,6 +9,9 @@ source $ZDOTDIR/config/completion.zsh
 # aws completion
 complete -C '/usr/local/bin/aws_completer' aws
 
+# kubectl completion
+source <(kubectl completion zsh)
+
 # history
 export HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 export HISTSIZE=25000
