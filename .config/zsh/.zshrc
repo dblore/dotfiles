@@ -6,6 +6,9 @@ path+=("$PYENV_ROOT/bin")
 _comp_options+=(globdots) # With hidden files
 source $ZDOTDIR/config/completion.zsh
 
+# aws completion
+complete -C '/usr/local/bin/aws_completer' aws
+
 # history
 export HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 export HISTSIZE=25000
@@ -70,7 +73,7 @@ zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
 # change cursor mode
-source $ZDOTDIR/plugins/cursor_mode
+source $ZDOTDIR/plugins/cursor-mode
 
 # syntax highlighting
 source "$ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
