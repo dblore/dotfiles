@@ -1,10 +1,10 @@
 import = ["/Users/dan.blore/.config/alacritty/themes/themes/gruvbox_dark.toml"]
 
 [font]
-size = 18
+size = 13
 
 [font.normal]
-family = "UbuntuMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 
 [window]
 decorations = "none"
