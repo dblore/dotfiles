@@ -1,6 +1,13 @@
 # path
 path+=('/opt/homebrew/bin')
 path+=("$PYENV_ROOT/bin")
+path+=("$GEM_HOME"/bin)
+
+# fpath
+if type brew &>/dev/null
+then
+  fpath+="$(brew --prefix)/share/zsh/site-functions"
+fi
 
 # auto complete
 _comp_options+=(globdots) # With hidden files
@@ -16,7 +23,7 @@ source <(kubectl completion zsh)
 export HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 export HISTSIZE=25000
 export SAVEHIST=25000
-setopt EXTENDED_HISTORY          # Write the history file in the ':start:elapsed;command' format.
+setopt EXTENDED_HISTORY          # Write the history fconsul::settings::service_enableile in the ':start:elapsed;command' format.
 setopt SHARE_HISTORY             # Share history between all sessions.
 setopt HIST_EXPIRE_DUPS_FIRST    # Expire a duplicate event first when trimming history.
 setopt HIST_IGNORE_DUPS          # Do not record an event that was just recorded again.

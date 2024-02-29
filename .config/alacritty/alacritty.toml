@@ -1,13 +1,13 @@
 import = ["/Users/dan.blore/.config/alacritty/themes/themes/gruvbox_dark.toml"]
 
 [font]
-size = 13
+size = 14
 
 [font.normal]
 family = "JetBrainsMono Nerd Font"
 
 [window]
-decorations = "none"
+startup_mode = "Maximized"
 
 [window.padding]
 x = 7
