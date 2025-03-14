@@ -4,6 +4,9 @@ return {
   build = ":Copilot auth",
   event = "BufReadPost",
   opts = {
+    filetypes = {
+      yaml = true,
+    },
     suggestion = {
       auto_trigger = true,
       keymap = {

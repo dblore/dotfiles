@@ -23,6 +23,8 @@ fi
 eval "$(starship init zsh)"
 export EDITOR=/opt/homebrew/bin/nvim
 
+alias ls='ls --color=auto'
+
 # Git
 alias gc="git commit -m"
 alias gca="git commit -a -m"
