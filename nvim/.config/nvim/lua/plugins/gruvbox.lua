@@ -6,7 +6,7 @@ return {
     -- Optionally configure and load the colorscheme
     -- directly inside the plugin declaration.
 
-    -- vim.g.gruvbox_material_statusline_style = "original"
+    vim.g.gruvbox_material_statusline_style = "original"
     vim.o.background = "dark"
     vim.g.gruvbox_material_background = "hard"
     vim.g.gruvbox_material_foreground = "original"
