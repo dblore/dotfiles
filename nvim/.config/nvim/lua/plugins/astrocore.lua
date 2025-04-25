@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -28,6 +26,7 @@ return {
     options = {
       opt = { -- vim.opt.<key>
         relativenumber = true, -- sets vim.opt.relativenumber
+        scrolloff = 10,
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
@@ -58,6 +57,21 @@ return {
             )
           end,
           desc = "Close buffer from tabline",
+        },
+
+        ["<Leader>m"] = { desc = "My Notes" },
+        ["<Leader>mi"] = { "<Cmd>e ~/notes<CR><Cmd>cd ~/notes/<CR>", desc = "Navigate to notes folder" },
+        ["<Leader>md"] = {
+          function() vim.cmd("e " .. "~/notes/daily/" .. os.date "%d-%m-%Y" .. ".md") end,
+          desc = "Open today's daily note",
+        },
+        ["<Leader>mn"] = {
+          function()
+            vim.ui.input({ prompt = "Enter note name: " }, function(note_name)
+              if note_name and note_name ~= "" then vim.cmd("e " .. "~/notes/" .. note_name .. ".md") end
+            end)
+          end,
+          desc = "Create new note",
         },
 
         -- tables with just a `desc` key will be registered with which-key if it's installed

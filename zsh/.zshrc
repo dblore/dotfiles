@@ -6,6 +6,7 @@ compinit
 source <(kubectl completion zsh)
 complete -C '/usr/local/bin/aws_completer' aws
 
+source <(fzf --zsh)
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 bindkey '^w' autosuggest-execute
@@ -98,7 +99,7 @@ path+=("/Users/dan.blore/.gem/ruby/3.3.2/bin")
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="/Users/dan.blore/tools/puppet-editor-services:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"
-
+export PATH="$HOME/.emacs.d/bin:$PATH"
 
 export AWS_DEFAULT_REGION="us-east-1"
 export AWS_PAGER=""
