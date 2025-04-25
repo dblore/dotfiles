@@ -5,7 +5,7 @@ maximize = true
 
 font-size = 15
 
-theme = "carbonfox"
+theme = "GruvboxDarkHard"
 
 scrollback-limit = 4294967295
 
