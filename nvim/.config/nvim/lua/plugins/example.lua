@@ -135,6 +135,7 @@ return {
         "vim",
         "yaml",
       },
+      auto_install = true,
     },
   },
 

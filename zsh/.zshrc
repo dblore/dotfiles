@@ -97,6 +97,7 @@ path+=("/Users/dan.blore/.config/scripts")
 path+=("~/.rd/bin")
 path+=("/Users/dan.blore/.gem/ruby/3.3.2/bin")
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 export PATH="/Users/dan.blore/tools/puppet-editor-services:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH="$HOME/.emacs.d/bin:$PATH"

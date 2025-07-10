@@ -5,7 +5,7 @@ maximize = true
 
 font-size = 15
 
-theme = "tokyonight_moon"
+theme = tokyonight_moon
 
 scrollback-limit = 4294967295
 
