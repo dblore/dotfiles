@@ -1,13 +1,8 @@
-mouse-hide-while-typing = true
-macos-option-as-alt = left
-
 maximize = true
-
 font-size = 15
-
-theme = tokyonight_moon
-
+theme = TokyoNight Moon
 scrollback-limit = 4294967295
-
 window-save-state = always
-
+font-family = "GeistMono NF"
+macos-option-as-alt = true
+mouse-hide-while-typing = true

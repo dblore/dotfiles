@@ -9,12 +9,6 @@ complete -C '/usr/local/bin/aws_completer' aws
 source <(fzf --zsh)
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-bindkey '^w' autosuggest-execute
-bindkey '^e' autosuggest-accept
-bindkey '^u' autosuggest-toggle
-bindkey '^L' vi-forward-word
-bindkey '^k' up-line-or-search
-bindkey '^j' down-line-or-search
 
 if [[ "${widgets[zle-keymap-select]#user:}" == "starship_zle-keymap-select" || \
       "${widgets[zle-keymap-select]#user:}" == "starship_zle-keymap-select-wrapped" ]]; then
@@ -25,6 +19,12 @@ eval "$(starship init zsh)"
 export EDITOR=/opt/homebrew/bin/nvim
 
 alias ls='ls --color=auto'
+#
+# VI Mode
+bindkey jj vi-cmd-mode
+
+# Kubernetes
+alias k="kubecolor"
 
 # Git
 alias gc="git commit -m"
@@ -60,8 +60,6 @@ alias ......="cd ../../../../.."
 alias cl='clear'
 
 alias v='nvim'
-# VI Mode
-bindkey jj vi-cmd-mode
 
 # switch aws profiles
 function awsprofile() {
@@ -119,3 +117,37 @@ export NODE_EXTRA_CA_CERTS=/Users/dan.blore/netskope/certs/nscacert_combined.pem
 export GIT_SSL_CAPATH=/Users/dan.blore/netskope/certs/nscacert_combined.pem
 export SSL_CERT_FILE=/Users/dan.blore/netskope/certs/nscacert_combined.pem
 
+# Netskope SSL Decryption Cert
+export REQUESTS_CA_BUNDLE=/opt/netskope/certs/nscacert_combined.pem
+export CURL_CA_BUNDLE=/opt/netskope/certs/nscacert_combined.pem
+export SSL_CERT_DIR=/opt/netskope/certs/nscacert_combined.pem
+export PIP_CERT=/opt/netskope/certs/nscacert_combined.pem
+export NODE_EXTRA_CA_CERTS=/opt/netskope/certs/nscacert_combined.pem
+export GIT_SSL_CAPATH=/opt/netskope/certs/nscacert_combined.pem
+export SSL_CERT_FILE=/opt/netskope/certs/nscacert_combined.pem
+export HTTPLIB2_CA_CERTS=/opt/netskope/certs/nscacert_combined.pem
+export DENO_TLS_CA_STORE=system
+
+# opencode
+export PATH=/Users/dan.blore/.opencode/bin:$PATH
+
+# Created by `pipx` on 2026-03-17 12:09:30
+export PATH="$PATH:/Users/dan.blore/.local/bin"
+
+function sesh-sessions() {
+  {
+    exec </dev/tty
+    exec <&1
+    local session
+    session=$(sesh list -t -c | fzf --height 40% --reverse --border-label ' sesh ' --border --prompt '⚡  ')
+    zle reset-prompt > /dev/null 2>&1 || true
+    [[ -z "$session" ]] && return
+    sesh connect $session
+  }
+}
+
+zle     -N             sesh-sessions
+bindkey -M emacs '\ep' sesh-sessions
+bindkey -M vicmd '\ep' sesh-sessions
+bindkey -M viins '\ep' sesh-sessions
+eval "$(zoxide init zsh)"
